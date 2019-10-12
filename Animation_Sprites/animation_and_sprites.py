@@ -88,8 +88,8 @@ while running:
     if not(char1_isJump):
         if keys[pygame.K_SPACE]:
             char1_isJump = True
-            char1_walkLeft = False
-            char1_walkRight = False
+            char1_left = False
+            char1_right = False
             char1_walk_count = 0
 
     else:
