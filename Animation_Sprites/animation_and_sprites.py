@@ -3,16 +3,16 @@
 import pygame
 pygame.init()
 
-(window_width, window_height) = (1920, 1440)
+(window_width, window_height) = (800, 600)
 win = pygame.display.set_mode((window_width, window_height))
 pygame.display.set_caption("Jumper")
 
 clock = pygame.time.Clock()
 
 char1_x = 50
-char1_y = 600
-char1_width = 345
-char1_height = 708
+char1_y = 450
+char1_width = 39
+char1_height = 72
 vel = 5
 
 char1_isJump = False
@@ -24,23 +24,23 @@ char1_walk_count = 0
 
 char1_walkRight = []
 for i in range(18):
-    image_name = 'Monstro/WALK/RIGHT/' + 'skeleton-WALK_' + str(i) + '.png'
+    image_name = 'Monstro/WALK/RIGHT/' + 'skeleton-resizedWALK_' + str(i) + '.png'
     image = pygame.image.load(image_name)
     char1_walkRight.append(image)
 
 char1_walkLeft = []
 for i in range(18):
-    image_name = 'Monstro/WALK/LEFT/' + 'skeleton-WALK_' + str(i) + '.png'
+    image_name = 'Monstro/WALK/LEFT/' + 'skeleton-resizedWALK_' + str(i) + '.png'
     image = pygame.image.load(image_name)
     char1_walkLeft.append(image)
 
 char1_idle = []
 for i in range(18):
-    image_name = 'Monstro/IDLE/' + 'skeleton-IDLE_' + str(i) + '.png'
+    image_name = 'Monstro/IDLE/' + 'skeleton-resizedIDLE_' + str(i) + '.png'
     image = pygame.image.load(image_name)
     char1_idle.append(image)
 
-backgroud = pygame.image.load('forrest2_scaled.png')
+backgroud = pygame.image.load('forrest2.png')
 
 
 def updateWindow():
