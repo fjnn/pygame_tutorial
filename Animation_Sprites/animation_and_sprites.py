@@ -45,6 +45,7 @@ backgroud = pygame.image.load('forrest2.png')
 
 def updateWindow():
     global char1_walk_count
+    print(char1_walk_count)
     win.blit(backgroud, (0, 0))
     # pygame.draw.rect(win, (255, 0, 0), (char1_x, char1_y, char1_width, char1_height))
     if char1_walk_count + 1 >= 36:
@@ -56,6 +57,7 @@ def updateWindow():
         win.blit(char1_walkLeft[char1_walk_count//2], (char1_x, char1_y))
         char1_walk_count += 1
     else:
+        print("here")
         win.blit(char1_idle[char1_walk_count//2], (char1_x, char1_y))
         char1_walk_count += 1
     pygame.display.update()
@@ -83,7 +85,7 @@ while running:
     else:
         char1_left = False
         char1_right = False
-        char1_walk_count = 0
+        # char1_walk_count = 0
 
     if not(char1_isJump):
         if keys[pygame.K_SPACE]:
