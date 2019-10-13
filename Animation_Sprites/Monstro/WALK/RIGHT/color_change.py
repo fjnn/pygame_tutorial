@@ -1,5 +1,5 @@
 
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 
 
 from PIL import Image
@@ -33,7 +33,7 @@ def colored_image(image_path, saved_location):
 
 
 if __name__ == '__main__':
-    for i in range(1):
-        image = 'skeleton-resizedIDLE_' + str(i) + '.png'
-        colored_image(image, 'skeleton-coloredIDLE_' + str(i) + '.png')
+    for i in range(18):
+        image = 'skeleton-resizedWALK_' + str(i) + '.png'
+        colored_image(image, 'skeleton-coloredWALK_' + str(i) + '.png')
         print(i)
