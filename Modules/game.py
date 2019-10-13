@@ -42,7 +42,7 @@ while running:
         greenDragon.left = False
         greenDragon.right = True
 
-    elif keys[pygame.K_a] and redDragon.x > 0:
+    if keys[pygame.K_a] and redDragon.x > 0:
         redDragon.x -= redDragon.vel
         redDragon.left = True
         redDragon.right = False
@@ -58,28 +58,31 @@ while running:
         redDragon.left = False
         redDragon.right = False
 
-    if not(greenDragon.isJump or redDragon.isJump):
+    if not(greenDragon.isJump):
         if keys[pygame.K_SPACE]:
             greenDragon.isJump = True
             greenDragon.left = False
             greenDragon.right = False
             greenDragon.walk_count = 0
+    else:
+        if greenDragon.jumpCount >= -10:
+            greenDragon.y -= (greenDragon.jumpCount * abs(greenDragon.jumpCount)) * 0.5
+            greenDragon.jumpCount -= 1
+        else:
+            greenDragon.jumpCount = 10
+            greenDragon.isJump = False
+
+    if not(redDragon.isJump):
         if keys[pygame.K_h]:
             redDragon.isJump = True
             redDragon.left = False
             redDragon.right = False
             redDragon.walk_count = 0
-
     else:
-        if greenDragon.jumpCount >= -10:
-            greenDragon.y -= (greenDragon.jumpCount * abs(greenDragon.jumpCount)) * 0.5
-            greenDragon.jumpCount -= 1
         if redDragon.jumpCount >= -10:
             redDragon.y -= (redDragon.jumpCount * abs(redDragon.jumpCount)) * 0.5
             redDragon.jumpCount -= 1
         else:
-            greenDragon.jumpCount = 10
-            greenDragon.isJump = False
             redDragon.jumpCount = 10
             redDragon.isJump = False
     clock.tick(36)
